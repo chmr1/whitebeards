@@ -1,37 +1,29 @@
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { HttpModule } from '@angular/http'
-import { ReactiveFormsModule, FormsModule } from '@angular/forms'
+import { UsersModule } from "./users/users.module";
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { RouterModule } from "@angular/router";
+import { HttpModule } from "@angular/http";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
-import { appRoutes } from './routes'
-import { AppComponent }  from './components/app';
-import { NavBarComponent }  from './components/nav-bar';
-import { CoursesComponent } from "./components/courses";
-import { RegisterComponent } from "./components/sign-in";
-import { SignInComponent } from "./components/sign-in";
-import { LoadingComponent } from "./components/loading-spinner";
-import { DataRepositoryService } from "./services/data-repository"
-import { AccountMenuComponent } from "./components/account-menu";
+import { appRoutes } from "./routes";
+import { AppComponent } from "./app.component";
+import { CoreModule } from "./core/core.module";
+import { SharedModule } from "./shared/shared.module";
+import { CatalogModule } from "./catalog/catalog.module";
 
 @NgModule({
-  imports:      [
+  imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
+    CoreModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    SharedModule,
+    CatalogModule,
+    UsersModule,
+    RouterModule.forRoot(appRoutes),
   ],
-  declarations: [
-    AppComponent,
-    NavBarComponent,
-    CoursesComponent,
-    RegisterComponent,
-    SignInComponent,
-    LoadingComponent,
-    AccountMenuComponent
-  ],
-  providers: [ DataRepositoryService ],
-  bootstrap:    [ AppComponent ]
+  declarations: [AppComponent],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

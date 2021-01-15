@@ -14,7 +14,7 @@
   padding-left: 5px;
 }
 .welcome {
-  position:relative;
+  position: relative;
   cursor: pointer;
 }
 .menu {
@@ -23,8 +23,8 @@
   padding: 8px;
   color: #556b8e;
   top: 28px;
-  right:5px;
+  right: 5px;
   font-size: 20px;
-  border: 1px solid #CCDDFF;
+  border: 1px solid #ccddff;
   cursor: pointer;
 }
